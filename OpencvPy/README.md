@@ -8,6 +8,7 @@ Overview
 ## Usage
 
 ## Install
+$ sudo apt-get install python-opencv
 
 ## Contribution
 

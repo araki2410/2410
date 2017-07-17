@@ -13,4 +13,4 @@ Overview
 
 ## Author
 
-[tcnksm](https://github.com/araki2410)
+[araki2410](https://github.com/araki2410)

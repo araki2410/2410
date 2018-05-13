@@ -3,11 +3,13 @@
 
 Overview
 
-## Requirement
-## Usage
+# Requirement
+# Usage
 
-## Install
-###install python3.6
+# Install
+##install python3.6
+
+$ sudo apt-get update && sudo apt-get upgrade
 $wget -O Python-3.6.4.tgz https://www.python.org/ftp/python/3.6.4/Python-3.6.4.t$gz
 $sudo tar xzvf Python-3.6.4.tgz
 $cd Python-3.6.4/
@@ -16,13 +18,13 @@ $sudo make
 $sudo make install
 
 
-###Time
+##Time
 $ sudo apt-get purge wolfram-engine
 $ sudo apt-get purge libreoffice*
 $ sudo apt-get clean
 $ sudo apt-get autoremove
 
-###Version up pip
+##Version up pip
 download get-pip from "https://bootstrap.pypa.io/get-pip.py"
 by curl, by wget, or from browser.
 cace of curl
@@ -30,7 +32,7 @@ $curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 $sudo python get-pip.py
 
-###I cant pip3...
+##I cant pip3...
 $sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
 [https://stackoverflow.com/questions/41328451/ssl-module-in-python-is-not-available-when-installing-package-with-pip3]
 
@@ -46,41 +48,97 @@ $sudo make install
 $sudo pip3 install numpy
 
 #??
+## Install OpenCv python3 !
+Download opencv.zip or GitClone opencv
 
-
-
-$ sudo apt-get update && sudo apt-get upgrade
-$ sudo apt-get install build-essential cmake pkg-config
-$ sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
-$ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-$ sudo apt-get install libxvidcore-dev libx264-dev
-$ sudo apt-get install libgtk2.0-dev libgtk-3-dev
-$ sudo apt-get install "libcanberra-gtk*"
-$ sudo apt-get install libatlas-base-dev gfortran
-$ sudo apt-get install python2.7-dev python3-dev
-
-$ cd ~
+$ cd
+$(cd <prefer DIR>)
 $ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.3.0.zip
 $ unzip opencv.zip
 $ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.3.0.zip
 $ unzip opencv_contrib.zip
 
 
+$ls
+Python-3.6.4.tgz  opencv-3.3.0/  opencv_contrib-3.3.0/  yum/
+Python-3.6.4/  get-pip.py        opencv.zip     opencv_contrib.zip
 
+$cd opencv-3.3.0
+$ mkdir build
+$ cd build
+$ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+     -D CMAKE_INSTALL_PREFIX=/usr/local \
+     -D INSTALL_PYTHON_EXAMPLES=ON \
+     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.3.0/modules \
+     -D BUILD_EXAMPLES=ON ..
+     
+("~/opencv_contrib/modules" is transfer your dir path.)
 
+.
+.
+.
+>-- Configuring done
+>-- Generating done
+>-- Build files have been written to: /home/username/opencv-3.3.0/build
+
+(said "...done  ..,done ...". success!)
+
+$make -j4                                                                       
+'''
+Scanning dependencies of target carotene_objs
+Scanning dependencies of target IlmImf
+Scanning dependencies of target libwebp
+Scanning dependencies of target libprotobuf
+[  0%] Building CXX object 3rdparty/carotene/hal/carotene/CMakeFiles/carotene_objs.dir/src/absdiff.cpp.o
+[  0%] Building C object 3rdparty/libwebp/CMakeFiles/libwebp.dir/dec/alpha_dec.c.o
+[  0%] Building CXX object 3rdparty/openexr/CMakeFiles/IlmImf.dir/Half/half.cpp.o
+[  0%] Building CXX object 3rdparty/protobuf/CMakeFiles/libprotobuf.dir/src/google/protobuf/arena.cc.o
+[  0%] Building CXX object 3rdparty/carotene/hal/carotene/CMakeFiles/carotene_objs.dir/src/accumulate.cpp.o
+
+.
+.
+.
+[100%]......Demo
+$
+$sudo make install
+
+## Test python3 cv2!
+$ python3                            [~]
+Python 3.6.4 (default, May 10 2018, 22:29:25) 
+[GCC 4.9.2] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import cv2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'cv2'
+
+--------
+???
+
+$btlear@pi% python3.4                          [~]
+Python 3.4.2 (default, Oct 19 2014, 13:31:11) 
+[GCC 4.9.1] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import cv2
+>>> 
+>>> exit()
+--------
+Done!
+
+##??
 python2
 $ sudo apt-get install python-opencv
 $ sudo apt-get -yV install python3-numpy python3-scipy python3-matplotlib
 
 
 
-## Contribution
+# Contribution
 
-## Author
+# Author
 
 [araki2410](https://github.com/araki2410)
 
-## Reference
+# Reference
 [http://www.sasapy.com/raspi/raspiban_install_python36/](ラズパイ (Raspbian) にPython3.6をインストールする)
 https://www.pyimagesearch.com/2017/10/09/optimizing-opencv-on-the-raspberry-pi/
 [https://qiita.com/gyu-don/items/35f40c4649cfec3bcd40](Raspbian OSからpipでのパッケージダウンロードや、httpsでのアクセスができないと思ったら時計ずれてただけだった話。)

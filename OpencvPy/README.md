@@ -167,3 +167,7 @@ https://www.pyimagesearch.com/2017/10/09/optimizing-opencv-on-the-raspberry-pi/
 [https://qiita.com/gyu-don/items/35f40c4649cfec3bcd40] (Raspbian OSからpipでのパッケージダウンロードや、httpsでのアクセスができないと思ったら時計ずれてただけだった話。)
 [https://stackoverflow.com/questions/41328451/ssl-module-in-python-is-not-available-when-installing-package-with-pip3] (“SSL module in Python is not available” when installing package with pip3“)
 [https://qiita.com/nanbuwks/items/422eb405ceef84826ab4] (OpenCV + Python3 on Raspberry Pi)
+----[
+[https://leico.github.io/TechnicalNote/Linux/webcam-usage] (Linux: 利用できるWebカメラの情報を取得する)
+[https://qiita.com/wkentaro/items/3d3bee56445894da879e] (Python+OpenCVでカメラキャプチャ)
+[https://qiita.com/mix_dvd/items/98feedc8c98bc7790b30] (Webカメラを使ってリアルタイムに顔検出してみる)

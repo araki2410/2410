@@ -53,6 +53,8 @@ $sudo pip3 install numpy
 #??
 ## Install OpenCv python3 !
 Download opencv.zip or GitClone opencv
+I pay 5 days this step.
+RaspberryPi had hi temp. be OverHeated. should preper KeepCooler method.
 
 $ cd
 $(cd <prefer DIR>)
@@ -102,8 +104,26 @@ Scanning dependencies of target libprotobuf
 .
 .
 [100%]......Demo
+
 $
+
 $sudo make install
+.
+.
+
+[ 82%]...
+
+[ 83%]...
+
+[ 84%]...
+
+..
+.
+
+$
+
+---------
+Done!
 
 ## Test python3 cv2!
 $ python3                            [~]

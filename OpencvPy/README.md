@@ -154,6 +154,18 @@ $ sudo apt-get install python-opencv
 $ sudo apt-get -yV install python3-numpy python3-scipy python3-matplotlib
 
 
+## Install CUDA to Install tensorflow (to facenet)
+(https://www.tensorflow.org/versions/r1.3/install/install_sources
+(https://docs.bazel.build/versions/master/install-ubuntu.html
+https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/pi_examples/
+
+$curl https://storage.googleapis.com/download.tensorflow.org/models/inception_dec_2015_stripped.zip -o /tmp/inception_dec_2015_stripped.zip
+
+-------------
+
+
+
+
 
 # Contribution
 

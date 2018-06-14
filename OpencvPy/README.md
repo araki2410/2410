@@ -1,28 +1,81 @@
 0Name
 ====
 
-#Overview
+# git clone
 
-# Requirement
-# Usage
+$ git clone https://github.com/araki2410/<dir name>
+
+(export GIT_SSL_NO_VERIFY=1)
 
 # Install
-##install python3.6
+
+$sudo apt-get install cmake
+
+$sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+[https://stackoverflow.com/questions/41328451/ssl-module-in-python-is-not-available-when-installing-package-with-pip3]
+
+
+$ cd
+
+$(cd <prefer DIR>)
+
+$ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.3.0.zip
+
+(wget --no-check-certificate -O opencv.zip...)
+
+$ unzip opencv.zip
+
+$ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.3.0.zip
+
+$ unzip opencv_contrib.zip
+
+$ cd opencv-3.3.0
+$ mkdir build
+$ cd build
+$ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+     -D CMAKE_INSTALL_PREFIX=/usr/local \
+     -D INSTALL_PYTHON_EXAMPLES=ON \
+     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.3.0/modules \
+     -D BUILD_EXAMPLES=ON ..
+
+$sudo make install]
+
+# Check to import cv2 on python3
+$ python3.4                          
+>Python 3.4.2 (default, Oct 19 2014, 13:31:11) 
+>?[GCC 4.9.1] on linux
+>Type "help", "copyright", "credits" or "license" for more information.
+>>> import cv2
+>>> 
+>>> exit()
+-----------------
+
+## Install python3.6 (Dont use)
 
 $ sudo apt-get update && sudo apt-get upgrade
+
 $wget -O Python-3.6.4.tgz https://www.python.org/ftp/python/3.6.4/Python-3.6.4.t$gz
+
 $sudo tar xzvf Python-3.6.4.tgz
+
 $cd Python-3.6.4/
+
 $sudo ./configure
+
 $sudo make
+
 $sudo make install
 
+$make -j4                                                                       
 
 ##Time
 
 $ sudo apt-get purge wolfram-engine
+
 $ sudo apt-get purge libreoffice*
+
 $ sudo apt-get clean
+
 $ sudo apt-get autoremove
 
 ##Version up pip

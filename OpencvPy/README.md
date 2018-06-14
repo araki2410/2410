@@ -9,36 +9,27 @@ $ git clone https://github.com/araki2410/<dir name>
 
 # Install
 
-$sudo apt-get install cmake
+$sudo apt-get install cmake 
 
-$sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+$sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev \
 [https://stackoverflow.com/questions/41328451/ssl-module-in-python-is-not-available-when-installing-package-with-pip3]
 
 
-$ cd
+$ cd \
+($ cd [prefer DIR])
 
-$(cd <prefer DIR>)
+$ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.3.0.zip \
+($ wget --no-check-certificate -O opencv.zip...) \
+$ unzip opencv.zip \
+$ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.3.0.zip \
+$ unzip opencv_contrib.zip \
 
-$ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.3.0.zip
+$ cd opencv-3.3.0 \
+$ mkdir build \
+$ cd build \
+$ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.3.0/modules -D BUILD_EXAMPLES=ON ..
 
-(wget --no-check-certificate -O opencv.zip...)
-
-$ unzip opencv.zip
-
-$ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.3.0.zip
-
-$ unzip opencv_contrib.zip
-
-$ cd opencv-3.3.0
-$ mkdir build
-$ cd build
-$ cmake -D CMAKE_BUILD_TYPE=RELEASE \
-     -D CMAKE_INSTALL_PREFIX=/usr/local \
-     -D INSTALL_PYTHON_EXAMPLES=ON \
-     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.3.0/modules \
-     -D BUILD_EXAMPLES=ON ..
-
-$sudo make install]
+$ sudo make install
 
 # Check to import cv2 on python3
 $ python3.4                          

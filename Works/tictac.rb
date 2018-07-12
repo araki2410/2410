@@ -11,8 +11,7 @@ class Board
   end
 
   def put_to_stone(x,y,num)
-    print @board[y]
-    if @board[y][x] == 0
+    if @board[x][x] == 0
       @board[y][x] = num
     end
     print @board[y]

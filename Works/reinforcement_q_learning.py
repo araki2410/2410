@@ -83,7 +83,6 @@ plt.ion()
 # if gpu is to be used
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-
 ######################################################################
 # Replay Memory
 # -------------
@@ -269,11 +268,11 @@ def get_screen():
 
 
 env.reset()
-plt.figure()
-plt.imshow(get_screen().cpu().squeeze(0).permute(1, 2, 0).numpy(),
-           interpolation='none')
-plt.title('Example extracted screen')
-plt.show()
+# plt.figure()
+# plt.imshow(get_screen().cpu().squeeze(0).permute(1, 2, 0).numpy(),
+#            interpolation='none')
+# plt.title('Example extracted screen')
+# plt.show()
 
 
 ######################################################################
@@ -327,7 +326,8 @@ def select_action(state):
         with torch.no_grad():
             return policy_net(state).max(1)[1].view(1, 1)
     else:
-        return torch.tensor([[random.randrange(2)]], device=device, dtype=torch.long)
+#        return torch.tensor([[random.randrange(2)]], device=device, dtype=torch.long)
+        return torch.tensor([[random.randrange(9)]], device=device, dtype=torch.long)
 
 
 episode_durations = []

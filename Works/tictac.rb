@@ -14,14 +14,6 @@ while true
   whos_turn = turn%player + 1
   print "input x,y:"
   tag = gets.chomp!
-
-<<<<<<< HEAD
-  def put_to_stone(x,y,num)
-    if @board[x][x] == 0
-      @board[y][x] = num
-    end
-    print @board[y]
-=======
   if /(\d)[\S+|\s+](\d)/ =~ tag
     x,y = $1.to_i, $2.to_i
   else
@@ -40,6 +32,5 @@ while true
   else
     puts whos_turn
     break
->>>>>>> 698e52b017634ab516b7abe0bac5b728454d64d8
   end
 end

@@ -28,11 +28,10 @@ class Board
 
   def show(h=0)
     if h == 0
-      print "\n", @board, "\n"
+      return @board
     else
-      print "\n"
       for i in @board
-        print i, "\n"
+        return i
       end
     end
   end

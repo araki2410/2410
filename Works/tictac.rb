@@ -25,7 +25,9 @@ while true
     print "bad hoge \n"
     turn -= 1
   end
-  hoge.show(1)
+  for i in hoge.show()
+    print i, "\n"
+  end
   
   if hoge.line_check() == 0
     turn += 1

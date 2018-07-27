@@ -8,14 +8,18 @@ port = 24100
 #puts "usernameを入力してください"
 #user = gets.to_s
 
-def mainSystem(port)
-  #送信内容の入力
+iam = 1
+if ARGV 
+  iam = ARGV[0]
+end
+
+def mainSystem(who, port)
 #  puts "input message"
-  msg = gets.to_s
-  if msg == "exit"
-    exit!
-  end
-  port.puts "#{msg}"
+  msg = STDIN.gets.to_s
+#  if msg == "exit"
+#    exit!
+#  end
+  port.puts "#{who}:#{msg}:"
 #  puts "Send: #{Time.now}"
 
   print port.gets
@@ -27,14 +31,21 @@ end
 
 begin
   #localhostの20000ポートに接続
-#  port = TCPSocket.open("localhost",2410)
+  #  port = TCPSocket.open("localhost",2410)
   soc = TCPSocket.open("130.153.192.100" , port) #gp08 in ylab
 
 rescue
   puts "TCPSocket.open failed :#$!"
+  puts "Please run server program"
+  exit
 else
-  while true
-    mainSystem(soc)
-  end
-  soc.close
+  #  Process.fork do
+    loop do
+      mainSystem(iam, soc)
+    end
+#  while true
+    
+    #mainSystem(soc)
+#  end
+#  soc.close
 end

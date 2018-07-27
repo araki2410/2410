@@ -7,31 +7,34 @@ tictac = Board.new
 player = 2
 pl_list = {}
 turn = 0
-#hostname = "nboot2.cs.uec.ac.jp"
-#host = "130.153.192.3"
 port = 24100
 soc = TCPServer.new(port)
 loop do
   Thread.start(soc.accept) do |serv|
-
+    puts "#{$$}"
     #### Seat to player 
     if player > 0
       pl_list[serv.addr[3]] = player # {"adress" => player_num}
       player -=1
+      serv.puts("#{tictac.show}")
     else
-      serv.puts "Error:0010: sorry, full player now!"
+      serv.puts("Error:0010: sorry, full player now!")
       serv.close
     end
     
 #    p serv.peeraddr
 
     while buf = serv.gets
-      p buf
-      serv.puts "#{serv.addr}"
+      if /(\d):(\d)\D(\d)/ =~ buf
+        num, x, y = $1.to_i, $2.to_i, $3.to_i
+        if tictac.put_to_stone(x,y,num) == 0
+          serv.puts "correct"
+        else
+          serv.puts "missn"
+        end
+      end
+      serv.puts "#{tictac.show}"
     end
-
-    sleep(0.5)
-
 
     serv.close
     player += 1

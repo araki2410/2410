@@ -45,6 +45,7 @@ Sorry, I don't have it.
 25
 > exit
 Thank you
+
 $ 
 ```
 
@@ -53,7 +54,6 @@ $
 
 ----
 # Hints
-====
 
 This section include the spoiler.
 
@@ -97,6 +97,7 @@ print text.split(" ")
 ```
 
 - while end
+
 if you can't stop, type C-c (mean "Ctrl"+"c")
 
 ```ruby

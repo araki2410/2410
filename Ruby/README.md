@@ -171,3 +171,19 @@ while true
   print sum
 end
 ```
+
+# HELP
+```shell
+$ where ruby
+/usr/bin/ruby
+```
+In this case, "/usr/bin/ruby" is path.
+
+
+So, write to program head.
+```
+#!/usr/bin/ruby
+# -*- coding:utf-8 -*-
+
+puts "hoge"
+```

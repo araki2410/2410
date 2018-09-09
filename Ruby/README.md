@@ -58,7 +58,12 @@ Sorry, I don't have it.
 # Hints
 
 This section include the spoiler.
-
+- File.open
+- gets
+- split()
+- .to_i
+- Hash
+- while_end
 ## hint_1
 - File.open
 ```ruby
@@ -122,7 +127,7 @@ puts numA * 3
 
 ```
 
--Hash
+- Hash
 ```ruby
 dict = Hash.new() # dict = {}
 dict["apple"] = 20
@@ -135,7 +140,7 @@ puts dict["orange"]
 ```
 
 ## hint_3
-- while end
+- while_end
 
 if you can't stop, type C-c (mean "Ctrl"+"c").
 

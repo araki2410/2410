@@ -1,0 +1,7 @@
+apple,10
+pineapple,20
+melon,25
+watermelon,20
+papaya,15
+dragonfruit,20
+orange,25

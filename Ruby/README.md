@@ -12,7 +12,7 @@ $ ls
 
 This txt file contains fruit name and that price.
  
-## Number_1 Read the file.
+## Number_1 "*Read the file.*"
 Read and output "fruit_list.txt" in Ruby_program.
 
 ### Example_1
@@ -27,7 +27,7 @@ dragonfruit,20
 orange,25
 ```
 
-## Number_2 Reply the price.
+## Number_2 "*Reply the price.*"
 Cook the Number_1.
 
 Reply the price if receive a fruitname.
@@ -37,27 +37,29 @@ Reply the price if receive a fruitname.
 $ ./reply.rb
 > apple
 10
+
+$ ./reply.rb
 > papaya
 15
+
+$ ./reply.rb
 > cherry
 Sorry, I don't have it. 
-> orange
-25
-> exit
-Thank you
-
-$ 
 ```
 
 
-## Number_3
+## Number_3 "*Let's develop it yourself*"
+- Any times...
+- output total price.
+- output receipt.
+- discount 1 baht when odd price (1,3,5,7,9,11...).
 
 ----
 # Hints
 
 This section include the spoiler.
 
-## Hint_1
+## hint_1
 - File.open
 ```ruby
 File.open('fruit.txt', "r" ) do |text|
@@ -77,7 +79,7 @@ end
 ```
 
 
-## Hint_2
+## hint_2
 
 - gets
 ```ruby
@@ -94,41 +96,6 @@ text = "hoge piyo, fiz baz, foo bar"
 print text.split(",")
 print text.split(" ")
 
-```
-
-- while end
-
-if you can't stop, type C-c (mean "Ctrl"+"c")
-
-```ruby
-i = 0
-while i < 10
- i += 1
- puts i     
-end
-```
-```ruby
-i = 0
-while i <= 10
- i += 1
- puts i
-end
-```
-
-```ruby
-while true
-  print "hoge"
-end
-```
-```ruby
-i = 0
-while i < 10
-  i += 1
-  puts i
-  if i == 5
-    break
-  end   
-end
 ```
 
 - .to_i
@@ -149,8 +116,58 @@ numB = numB.to_i
 
 print("\n use .to_i \n")
 print("A+B=")
-puts numA.to_i + numB.to_i
+puts numA + numB
 print("A*3=")
-puts numA.to_i * 3
+puts numA * 3
 
+```
+
+-Hash
+```ruby
+dict = Hash.new() # dict = {}
+dict["apple"] = 20
+dict["orange"] = 25
+
+print dict
+puts dict["apple"]
+puts dict["orange"]
+
+```
+
+## hint_3
+- while end
+
+if you can't stop, type C-c (mean "Ctrl"+"c").
+
+```ruby
+i = 0
+while i < 10
+ i += 1
+ puts i     
+end
+```
+```ruby
+i = 0
+while i <= 10
+ i += 1
+ puts i
+end
+```
+```ruby
+i = 0
+while i < 10
+  i += 1
+  puts i
+  if i == 5
+    break
+  end   
+end
+```
+```ruby
+sum = 0
+while true
+  price = gets.to_i
+  sum += price
+  print sum
+end
 ```

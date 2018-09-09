@@ -192,3 +192,9 @@ So, write to program head.
 
 puts "hoge"
 ```
+
+If you don't have Ruby  
+```shell
+$ sudo apt-get install ruby
+$ where ruby
+```

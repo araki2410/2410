@@ -17,7 +17,7 @@ Read and output "fruit_list.txt" in Ruby_program.
 
 - File.open
 
-### Example_1
+  ### Example_1
 ```shell
 $ ./readfile.rb
 apple,10
